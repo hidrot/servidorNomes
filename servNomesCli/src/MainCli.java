@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class MainCli {
 	public static void main(String[] args) {
 		try {
-			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://localhost:9898/ServDNS");
+			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://172.16.147.77:9898/ServDNS");
 			int tipoServico = 3;
 			String enderecoServico = servDns.pegaEndereco(tipoServico);
 			if (enderecoServico != null) {

@@ -18,7 +18,7 @@ public class MainApp {
 			funcoes.add(3);
 
 			ServidorApp servApp = new ServidorApp(porta, funcoes);
-			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://localhost:9898/ServDNS");
+			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://172.16.147.77:9898/ServDNS");
 			servDns.registraServidor(servApp);
 			MsgServicos servicos = new Bind();
 			Naming.rebind("rmi://" + servApp.getEndereco() + "/ServApps", servicos);
