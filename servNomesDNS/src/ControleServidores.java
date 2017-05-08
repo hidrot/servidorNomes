@@ -46,8 +46,8 @@ public class ControleServidores {
 		ServidorApp servBuscado = this.controleServicos.buscaServico(tipo);
 		return servBuscado != null ? servBuscado.getEndereco() : null;
 	}
-	
-	public void mudaStatusServ(ServidorApp servApp){
+
+	public void mudaStatusServ(ServidorApp servApp) {
 		ServidorApp serv = buscaServidor(servApp);
 		serv.setOcupado(servApp.isOcupado());
 	}

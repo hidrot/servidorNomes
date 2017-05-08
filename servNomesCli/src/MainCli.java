@@ -9,7 +9,13 @@ public class MainCli {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		try {
-			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://localhost:9898/ServDNS");
+			String ip;
+			int porta;
+			System.out.println("Digite o IP em que se encontra o Servidor de DNS\n");
+			ip = new Scanner(System.in).next();
+			System.out.println("Digite a porta para se acessar o Servidor de DNS\n");
+			porta = new Scanner(System.in).nextInt();
+			MsgServDNS servDns = (MsgServDNS) Naming.lookup("rmi://" + ip + ":" + porta + "/ServDNS");
 
 			while (true) {
 				System.out.println("MENU\n0 - Média\n1 - Maior\n2 - Menor\n3 - Primos\n9 - Sair\n");

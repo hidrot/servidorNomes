@@ -18,5 +18,5 @@ public class RespostaServicos implements Serializable {
 	public double getResultado() {
 		return resultado;
 	}
-	
+
 }
