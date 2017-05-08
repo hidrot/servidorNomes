@@ -19,4 +19,12 @@ public class Bind extends UnicastRemoteObject implements MsgServDNS {
 	public int registraServidor(ServidorApp serv) {
 		return sdns.registraServidor(serv);
 	}
+
+	public int desregistraServidor(ServidorApp serv) {
+		return sdns.desregistraServidor(serv);
+	}
+
+	public void mudaStatusServ(ServidorApp serv) throws RemoteException {
+		sdns.mudaStatusServ(serv);
+	}
 }

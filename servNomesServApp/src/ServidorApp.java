@@ -9,24 +9,38 @@ public class ServidorApp implements Serializable {
 
 	private String ip;
 	private int porta;
-	private ArrayList servicos;
+	private ArrayList<Integer> servicos;
+	private volatile boolean ocupado;
 
-	public ServidorApp(int porta, ArrayList servicos) {
+	public ServidorApp(int porta) {
 		this.porta = porta;
 		try {
 			this.ip = InetAddress.getLocalHost().getHostAddress();
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-		this.servicos = servicos;
+		this.ocupado = false;
 	}
 
 	public String getEndereco() {
 		return this.ip + ":" + this.porta;
 	}
 
-	public ArrayList getServicos() {
+	public ArrayList<Integer> getServicos() {
 		return this.servicos;
+	}
+
+	public void setServicos(ArrayList<Integer> servicos) {
+		this.servicos = servicos;
+
+	}
+
+	public boolean isOcupado() {
+		return ocupado;
+	}
+
+	public void setOcupado(boolean ocupado) {
+		this.ocupado = ocupado;
 	}
 
 }

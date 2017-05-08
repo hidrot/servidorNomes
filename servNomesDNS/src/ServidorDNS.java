@@ -10,7 +10,16 @@ public class ServidorDNS {
 		return controleServidores.addServidor(serv);
 	}
 
+	public int desregistraServidor(ServidorApp serv) {
+		return controleServidores.removeServidor(serv);
+	}
+
 	public String getServico(int tipo) {
 		return controleServidores.getServico(tipo);
 	}
+
+	public void mudaStatusServ(ServidorApp serv) {
+		controleServidores.mudaStatusServ(serv);
+	}
+
 }

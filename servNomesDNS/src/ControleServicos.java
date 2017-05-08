@@ -26,27 +26,52 @@ public class ControleServicos {
 			case 3:// primos
 				primos.add(servApp);
 				break;
+			default:
+				break;
 			}
 		}
+	}
+
+	public void removeServicos(ServidorApp servApp) {
+		this.media.remove(servApp);
+		this.maior.remove(servApp);
+		this.menor.remove(servApp);
+		this.primos.remove(servApp);
 	}
 
 	public ServidorApp buscaServico(int tipo) {
 		switch (tipo) {
 		case 0:// media
 			if (media.size() > 0)
-				return media.get(0);
+				for (int i = 0; i < media.size(); i++) {
+					if (!media.get(i).isOcupado()) {
+						return media.get(i);
+					}
+				}
 			break;
 		case 1:// maior
 			if (maior.size() > 0)
-				return maior.get(0);
+				for (int i = 0; i < maior.size(); i++) {
+					if (!maior.get(i).isOcupado()) {
+						return maior.get(i);
+					}
+				}
 			break;
 		case 2:// menor
 			if (menor.size() > 0)
-				return menor.get(0);
+				for (int i = 0; i < menor.size(); i++) {
+					if (!menor.get(i).isOcupado()) {
+						return menor.get(i);
+					}
+				}
 			break;
 		case 3:// primos
 			if (primos.size() > 0)
-				return primos.get(0);
+				for (int i = 0; i < primos.size(); i++) {
+					if (!primos.get(i).isOcupado()) {
+						return primos.get(i);
+					}
+				}
 			break;
 		}
 		return null;
