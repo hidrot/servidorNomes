@@ -27,6 +27,7 @@ public class ControleServidores {
 		ServidorApp servRemove = buscaServidor(servApp);
 		if (servRemove != null) {
 			servidores.remove(servRemove);
+			controleServicos.removeServicos(servRemove);
 			return 0;
 		}
 		return 1;
